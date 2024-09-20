@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Lab 4</title>
+
+        <link rel="stylesheet" href="css.css">
+    </head>
+
+    <body>
+        <h1 id="word">INST377 - LAB 4</h1>
+        <button onclick="changeColor()">change color</button>
+
+        <script type="text/javascript">
+            function changeColor() {
+                if(document.getElementById('word').style.color == 'red') {
+                    const t = document.getElementById('word').style.color = 'black';
+                } else{
+                    const t = document.getElementById('word').style.color = 'red';
+                }
+            }
+        </script>
+    </body>
+</html>
