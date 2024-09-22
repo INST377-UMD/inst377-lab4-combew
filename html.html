@@ -7,7 +7,38 @@
 
     <body>
         <h1 id="word">INST377 - LAB 4</h1>
-        <button onclick="changeColor()">change color</button>
+        <div id="main-container">
+
+            <!-- Div 1 -->
+            <div class="div">
+                <form name="contactForm" onsubmit="return(formValidation())" action="https://www.google.com">
+                    <label>First Name</label>
+                    <input type="text" placeholder="Name" id="firstName" required>
+                    <br>
+        
+                    <input type="submit" value="Alert Me">
+                </form>
+            </div>
+
+
+            <!-- Div 2 -->
+            <div class="div">
+                <p>test</p>
+            </div>
+
+
+            <!-- Div 3 -->
+            <div class="div">
+                <p>test</p>
+            </div>
+
+
+            <!-- Div 4 -->
+            <div class="div">
+                <p>test</p>
+            </div>
+
+        </div>
 
         <script type="text/javascript">
             function changeColor() {
@@ -15,6 +46,13 @@
                     const t = document.getElementById('word').style.color = 'black';
                 } else{
                     const t = document.getElementById('word').style.color = 'red';
+                }
+            }
+
+            function formValidation() {
+                if(document.contactForm.firstName.value ==="") {
+                    // alert('Please entah a first name');
+                    return false;
                 }
             }
         </script>
