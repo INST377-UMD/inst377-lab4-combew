@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>Lab 4</title>
+
+        <link rel="stylesheet" href="css.css">
+    </head>
+
+    <body>
+        <h1 id="header1">INST377 - LAB 4</h1>
+        <div id="main-container">
+
+            <!-- Div 1 -->
+            <div class="div">
+                <form name="contactForm" onsubmit="return(formValidation())">
+                    <label>First Name</label>
+                    <input type="text" placeholder="Name" id="firstName" required>
+                    <br>
+        
+                    <input type="submit" value="Alert Me">
+                </form>
+            </div>
+
+
+            <!-- Div 2 -->
+            <div class="div">
+                <input type="button" id="colorButton" value="Color Change" onclick="changeColor()">
+            </div>
+
+
+            <!-- Div 3 -->
+            <div class="div">
+                <form name="validateText" onsubmit="return(textValidation())">
+                    <label>Text: </label>
+                    <input type="text" placeholder="funny haha" id="text">
+        
+                    <input type="submit" value="Validate Text">
+                </form>
+            </div>
+
+
+            <!-- Div 4 -->
+            <div class="div">
+                <input type="button" id="addTextButton" value="Add Text" onclick="addText()">
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+
+            function formValidation() {
+                const t = document.contactForm.firstName.value
+                console.log("element: ", t)
+                let userName = document.contactForm.firstName.value
+                if(document.contactForm.firstName.value != "") {
+                    alert('Hi '+ userName +"!");
+                    return false;
+                }
+            }
+
+            function changeColor() {
+                if(document.body.style.backgroundColor == "") {
+                    document.body.style.backgroundColor = "blue"
+                }
+                else{
+                    document.body.style.backgroundColor = ''
+                }
+            }
+
+            function textValidation() {
+                const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+                if(validationRegex.test(document.validateText.text.value)) {
+                    alert("There's a special char in dis box...")
+                }
+            }
+
+            function addText() {
+                document.getElementById("header1").innerHTML = "INST377 - LAB 4 Add Text"
+            }
+        </script>
+    </body>
+</html>
